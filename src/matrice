@@ -1,0 +1,375 @@
+add_light.c:  rt->first_light = new;
+add_light.c:  rt->last_light = new;
+add_light.c:  tmp = rt->first_light;
+add_light.c:  rt->last_light = new;
+add_light.c:  if (rt->first_light == NULL)
+add_object.c:  rt->first_object = new;
+add_object.c:  rt->last_object = new;
+add_object.c:  tmp = rt->first_object;
+add_object.c:  rt->last_object = new;
+add_object.c:  if (rt->first_object == NULL)
+aff_loading.c:  mlx_string_put(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+aff_loading.c:		 rt->size.size_x / 2 - 50, rt->size.size_y / 2 - 50,
+aff_loading.c:  mlx_string_put(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+aff_loading.c:		 rt->size.size_x - 400, rt->size.size_y - 50,
+aff_loading.c:	  mlx_pixel_put(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+aff_loading.c:			(rt->size.size_x / 4) - x, rt->size.size_y / 2 - y,
+aff_loading.c:	  mlx_pixel_put(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+aff_loading.c:			(rt->size.size_x / 4)
+aff_loading.c:			+ rt->size.size_x * (rt->size.size_x / 2)
+aff_loading.c:			/ rt->size.size_x + x,
+aff_loading.c:			rt->size.size_y / 2 - y, 0x00820F);
+aff_loading.c:  while (x <= rt->size.size_x)
+aff_loading.c:	  mlx_pixel_put(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+aff_loading.c:			(rt->size.size_x / 4)
+aff_loading.c:			+ x * (rt->size.size_x / 2)
+aff_loading.c:			/ rt->size.size_x, rt->size.size_y
+aff_loading.c:	  mlx_pixel_put(rt->mlx_init.mlx_ptr,
+aff_loading.c:			rt->mlx_init.win_ptr, (rt->size.size_x / 4)
+aff_loading.c:			+ x * (rt->size.size_x / 2) / rt->size.size_x,
+aff_loading.c:			rt->size.size_y / 2 + 6 - y, 0x00820F);
+aff_loading.c:      mlx_pixel_put(rt->mlx_init.mlx_ptr,
+aff_loading.c:		    rt->mlx_init.win_ptr,
+aff_loading.c:		    ((rt->size.size_x / 4) + 2) + pos * (rt->size.size_x / 2)
+aff_loading.c:		    / (rt->size.size_x + 2), rt->size.size_y / 2 - y, color);
+antialiasing.c:  ret = rt->mlx_init.data[pos];
+antialiasing.c:  if (pos + 4 < rt->size.size_x * 4)
+antialiasing.c:      ret += rt->mlx_init.data[pos + 4];
+antialiasing.c:      ret += rt->mlx_init.data[pos - 4];
+antialiasing.c:  if ((pos + (rt->size.size_x * 4)) / (rt->size.size_x * 4) < rt->size.size_y)
+antialiasing.c:      ret += rt->mlx_init.data[pos + (rt->size.size_x * 4)];
+antialiasing.c:  if ((pos - (rt->size.size_x * 4)) / (rt->size.size_x * 4) >= 0)
+antialiasing.c:      ret += rt->mlx_init.data[pos - (rt->size.size_x * 4)];
+antialiasing.c:  while (count <= rt->size.size_x * rt->size.size_y)
+antialiasing.c:      rt->mlx_init.data[count * 4] = tmp[count * 4];
+antialiasing.c:      rt->mlx_init.data[count * 4 + 1] = tmp[count * 4 + 1];
+antialiasing.c:      rt->mlx_init.data[count * 4 + 2] = tmp[count * 4 + 2];
+antialiasing.c:      rt->mlx_init.data[count * 4 + 3] = tmp[count * 4 + 3];
+antialiasing.c:  if (rt->general_param.anti_aliasing <= 1)
+antialiasing.c:  if ((tmp = malloc((rt->size.size_x * rt->size.size_y * 4) + 1)) == NULL)
+antialiasing.c:  anti_aliasing = rt->general_param.anti_aliasing;
+antialiasing.c:      my_memset(tmp, 0, (rt->size.size_x * rt->size.size_y * 4) + 1);
+antialiasing.c:      while (count <= rt->size.size_x * rt->size.size_y)
+apply_color.c:  if (rt->first_light == NULL)
+apply_color.c:      rt->light_var.cos_a = 0;
+apply_color.c:      rt->light_var.brightness = 0;
+apply_color.c:      rt->light_var.color.red = 0;
+apply_color.c:      rt->light_var.color.green = 0;
+apply_color.c:      rt->light_var.color.blue = 0;
+apply_color.c:  color[0] = (int)((rt->color & 0xFF0000) >> 16)
+apply_color.c:    * rt->light_var.cos_a * rt->light_var.shadow
+apply_color.c:    + (rt->light_var.brightness * rt->light_var.cos_a
+apply_color.c:       * rt->light_var.color.red / 100) * rt->light_var.shadow;
+apply_color.c:  color[1] = (int)((rt->color & 0x00FF00) >> 8)
+apply_color.c:    * rt->light_var.cos_a * rt->light_var.shadow
+apply_color.c:    + (rt->light_var.brightness * rt->light_var.cos_a
+apply_color.c:       * rt->light_var.color.green / 100) * rt->light_var.shadow;
+apply_color.c:  color[2] = (int)(rt->color & 0x0000FF)
+apply_color.c:    * rt->light_var.cos_a * rt->light_var.shadow
+apply_color.c:    + (rt->light_var.brightness * rt->light_var.cos_a
+apply_color.c:       * rt->light_var.color.blue / 100) * rt->light_var.shadow;
+bsc.c:  rt->general_param.anti_aliasing = 0;
+bsc.c:  rt->general_param.threads = 0;
+bsc.c:  rt->eye.check = FALSE;
+bsc.c:  rt->first_line = NULL;
+bsc.c:  rt->first_light = NULL;
+bsc.c:  rt->last_light = NULL;
+bsc.c:  rt->first_object = NULL;
+bsc.c:  rt->last_object = NULL;
+calc_matrice.c:  rt->matrice = -1;
+calc_matrice.c:  coord.x = (rt->eye.coord.x - object->coord.x);
+calc_matrice.c:  coord.y = (rt->eye.coord.y - object->coord.y);
+calc_matrice.c:  coord.z = (rt->eye.coord.z - object->coord.z);
+calc_matrice.c:  rt->prov_eye.coord.x = matrice_rotate_x(rt, &coord, object, -1);
+calc_matrice.c:  rt->prov_eye.coord.y = matrice_rotate_y(rt, &coord, object, -1);
+calc_matrice.c:  rt->prov_eye.coord.z = matrice_rotate_z(rt, &coord, object, -1);
+calc_matrice.c:  rt->prov_vector.x = matrice_rotate_x(rt, &(rt->vector), object, -1);
+calc_matrice.c:  rt->prov_vector.y = matrice_rotate_y(rt, &(rt->vector), object, -1);
+calc_matrice.c:  rt->prov_vector.z = matrice_rotate_z(rt, &(rt->vector), object, -1);
+calc_rot_eye.c:  rt->vector.x = (rt->cosinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		  * rt->cosinus[ANG(rt->eye.rotate.ry % 360)] * DIST
+calc_rot_eye.c:		  - rt->sinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		  * ((rt->size.size_x / 2) - x)
+calc_rot_eye.c:		  + rt->cosinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		  * rt->sinus[ANG(rt->eye.rotate.ry % 360)]
+calc_rot_eye.c:		  * ((rt->size.size_y / 2) - y));
+calc_rot_eye.c:  rt->vector.y = ((rt->cosinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		   * rt->sinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		   * rt->cosinus[ANG(rt->eye.rotate.ry % 360)]
+calc_rot_eye.c:		   + rt->sinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		   * rt->sinus[ANG(rt->eye.rotate.ry % 360)]) * DIST
+calc_rot_eye.c:		  + rt->cosinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		  * rt->cosinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		  * ((rt->size.size_x / 2) - x)
+calc_rot_eye.c:		  + (rt->cosinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		     * rt->sinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		     * rt->sinus[ANG(rt->eye.rotate.ry % 360)]
+calc_rot_eye.c:		     - rt->sinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		     * rt->cosinus[ANG(rt->eye.rotate.ry % 360)])
+calc_rot_eye.c:		  * ((rt->size.size_y / 2) - y));
+calc_rot_eye.c:  rt->vector.z = ((rt->sinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		   * rt->sinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		   * rt->cosinus[ANG(rt->eye.rotate.ry % 360)]
+calc_rot_eye.c:		   - rt->cosinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		   * rt->sinus[ANG(rt->eye.rotate.ry % 360)]) * DIST
+calc_rot_eye.c:		  + rt->sinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		  * rt->cosinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		  * ((rt->size.size_x / 2) - x)
+calc_rot_eye.c:		  + (rt->sinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		     * rt->sinus[ANG(rt->eye.rotate.rz % 360)]
+calc_rot_eye.c:		     * rt->sinus[ANG(rt->eye.rotate.ry % 360)]
+calc_rot_eye.c:		     + rt->cosinus[ANG(rt->eye.rotate.rx % 360)]
+calc_rot_eye.c:		     * rt->cosinus[ANG(rt->eye.rotate.ry % 360)])
+calc_rot_eye.c:		  * ((rt->size.size_y / 2) - y));
+check_eyes_number.c:  tmp = rt->first_object;
+check_shadow.c:  coord.x = (rt->k * rt->vector.x + rt->eye.coord.x) - object->coord.x;
+check_shadow.c:  coord.y = (rt->k * rt->vector.y + rt->eye.coord.y) - object->coord.y;
+check_shadow.c:  coord.z = (rt->k * rt->vector.z + rt->eye.coord.z) - object->coord.z;
+check_shadow.c:  rt->prov_eye.coord.x = matrice_rotate_x(rt, &coord, object);
+check_shadow.c:  rt->prov_eye.coord.y = matrice_rotate_y(rt, &coord, object);
+check_shadow.c:  rt->prov_eye.coord.z = matrice_rotate_z(rt, &coord, object);
+check_shadow.c:  coord.x = light->coord.x - (rt->k * rt->vector.x + rt->eye.coord.x);
+check_shadow.c:  coord.y = light->coord.y - (rt->k * rt->vector.y + rt->eye.coord.y);
+check_shadow.c:  coord.z = light->coord.z - (rt->k * rt->vector.z + rt->eye.coord.z);
+check_shadow.c:  rt->prov_vector.x = matrice_rotate_x(rt, &coord, object);
+check_shadow.c:  rt->prov_vector.y = matrice_rotate_y(rt, &coord, object);
+check_shadow.c:  rt->prov_vector.z = matrice_rotate_z(rt, &coord, object);
+check_shadow.c:    return (inter_sphere(rt, object, &(rt->prov_eye), &(rt->prov_vector)));
+check_shadow.c:    return (inter_cylinder(rt, object, &(rt->prov_eye), &(rt->prov_vector)));
+check_shadow.c:    return (inter_cone(rt, object, &(rt->prov_eye), &(rt->prov_vector)));
+check_shadow.c:    return (inter_plan(rt, object, &(rt->prov_eye), &(rt->prov_vector)));
+check_shadow.c:  return (rt->k);
+check_shadow.c:  rt->matrice = -1;
+check_shadow.c:  object_tmp = rt->first_object;
+check_shadow.c:  rt->matrice = 1;
+cpy_general_struct.c:  cpy->light_var.color.red = rt->light_var.color.red;
+cpy_general_struct.c:  cpy->light_var.color.green = rt->light_var.color.green;
+cpy_general_struct.c:  cpy->light_var.color.blue = rt->light_var.color.blue;
+cpy_general_struct.c:  cpy->light_var.norm.x = rt->light_var.norm.x;
+cpy_general_struct.c:  cpy->light_var.norm.y = rt->light_var.norm.y;
+cpy_general_struct.c:  cpy->light_var.norm.z = rt->light_var.norm.z;
+cpy_general_struct.c:  cpy->light_var.vector.x = rt->light_var.vector.x;
+cpy_general_struct.c:  cpy->light_var.vector.y = rt->light_var.vector.y;
+cpy_general_struct.c:  cpy->light_var.vector.z = rt->light_var.vector.z;
+cpy_general_struct.c:  cpy->light_var.norme_n = rt->light_var.norme_n;
+cpy_general_struct.c:  cpy->light_var.norme_l = rt->light_var.norme_l;
+cpy_general_struct.c:  cpy->light_var.brightness = rt->light_var.brightness;
+cpy_general_struct.c:  cpy->light_var.shadow = rt->light_var.shadow;
+cpy_general_struct.c:  cpy->light_var.cos_a = rt->light_var.cos_a;
+cpy_general_struct.c:  cpy->eye.coord.x = rt->eye.coord.x;
+cpy_general_struct.c:  cpy->eye.coord.y = rt->eye.coord.y;
+cpy_general_struct.c:  cpy->eye.coord.z = rt->eye.coord.z;
+cpy_general_struct.c:  cpy->eye.rotate.rx = rt->eye.rotate.rx;
+cpy_general_struct.c:  cpy->eye.rotate.ry = rt->eye.rotate.ry;
+cpy_general_struct.c:  cpy->eye.rotate.rz = rt->eye.rotate.rz;
+cpy_general_struct.c:  cpy->eye.check = rt->eye.check;
+cpy_general_struct.c:  cpy->prov_eye.coord.x = rt->prov_eye.coord.x;
+cpy_general_struct.c:  cpy->prov_eye.coord.y = rt->prov_eye.coord.y;
+cpy_general_struct.c:  cpy->prov_eye.coord.z = rt->prov_eye.coord.z;
+cpy_general_struct.c:  cpy->prov_eye.rotate.rx = rt->prov_eye.rotate.rx;
+cpy_general_struct.c:  cpy->prov_eye.rotate.ry = rt->prov_eye.rotate.ry;
+cpy_general_struct.c:  cpy->prov_eye.rotate.rz = rt->prov_eye.rotate.rz;
+cpy_general_struct.c:  cpy->prov_eye.check = rt->prov_eye.check;
+cpy_general_struct.c:  cpy->vector.x = rt->vector.x;
+cpy_general_struct.c:  cpy->vector.y = rt->vector.y;
+cpy_general_struct.c:  cpy->vector.z = rt->vector.z;
+cpy_general_struct.c:  cpy->prov_vector.x = rt->prov_vector.x;
+cpy_general_struct.c:  cpy->prov_vector.y = rt->prov_vector.y;
+cpy_general_struct.c:  cpy->prov_vector.z = rt->prov_vector.z;
+cpy_general_struct.c:  cpy->color = rt->color;
+cpy_general_struct.c:  cpy->matrice = rt->matrice;
+cpy_general_struct.c:  cpy->k = rt->k;
+cpy_general_struct.c:  cpy->inter = rt->inter;
+cpy_general_struct.c:  cpy->mlx_init.mlx_ptr = rt->mlx_init.mlx_ptr;
+cpy_general_struct.c:  cpy->mlx_init.win_ptr = rt->mlx_init.win_ptr;
+cpy_general_struct.c:  cpy->mlx_init.img_ptr = rt->mlx_init.img_ptr;
+cpy_general_struct.c:  cpy->mlx_init.data = rt->mlx_init.data;
+cpy_general_struct.c:  cpy->mlx_init.bits_per_pixel = rt->mlx_init.bits_per_pixel;
+cpy_general_struct.c:  cpy->mlx_init.size_line = rt->mlx_init.size_line;
+cpy_general_struct.c:  cpy->mlx_init.endian = rt->mlx_init.endian;
+cpy_general_struct.c:  cpy->size.size_x = rt->size.size_x;
+cpy_general_struct.c:  cpy->size.size_y = rt->size.size_y;
+cpy_general_struct.c:  cpy->general_param.anti_aliasing = rt->general_param.anti_aliasing;
+cpy_general_struct.c:  cpy->general_param.threads = rt->general_param.threads;
+cpy_general_struct.c:  cpy->pix_calc.nb_pixel = rt->pix_calc.nb_pixel;
+cpy_general_struct.c:  cpy->pix_calc.pixel_pos = rt->pix_calc.pixel_pos;
+cpy_light_list.c:  fill_light_cpy(new, rt->first_light);
+cpy_light_list.c:  tmp = rt->first_light;
+cpy_light_list.c:  tmp = rt->first_light;
+cpy_object_list.c:  fill_object_cpy(new, rt->first_object);
+cpy_object_list.c:  tmp = rt->first_object;
+cpy_object_list.c:  tmp = rt->first_object;
+default_size_window.c:  rt->size.size_x = DEFAULT_SIZE_X;
+default_size_window.c:  rt->size.size_y = DEFAULT_SIZE_Y;
+expose_hook.c:  mlx_put_image_to_window(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr,
+expose_hook.c:			  rt->mlx_init.img_ptr, 0, 0);
+fill_struct_tab.c:  rt->first_line = list;
+fill_struct_tab.c:   column_nb = get_object_column_number(rt->ref_tab);
+free_light_list.c:  tmp = rt->first_light;
+free_object_list.c:  tmp = rt->first_object;
+get_column_number.c:      if (specs_nb == rt->ref_tab[count])
+get_eyes_spec.c:  if ((rt->eye.rotate.rx =
+get_eyes_spec.c:  if ((rt->eye.rotate.ry =
+get_eyes_spec.c:  if ((rt->eye.rotate.rz =
+get_eyes_spec.c:  if ((rt->eye.coord.x =
+get_eyes_spec.c:  if ((rt->eye.coord.y =
+get_eyes_spec.c:  if ((rt->eye.coord.z =
+get_eyes_spec.c:      rt->eye.check = TRUE;
+get_general_params.c:  rt->general_param.threads = atof(nb);
+get_general_params.c:  if (rt->general_param.threads > 4 || rt->general_param.threads < 1)
+get_general_params.c:  rt->general_param.anti_aliasing = atof(nb);
+get_general_params.c:  if (rt->general_param.anti_aliasing < 0)
+get_light_specs.c:  if ((rt->last_light->coord.x =
+get_light_specs.c:  if ((rt->last_light->coord.y =
+get_light_specs.c:  if ((rt->last_light->coord.z =
+get_specs.c:  if ((rt->last_object->effects.reflexion =
+get_specs.c:  if ((rt->last_object->effects.opacity =
+get_specs.c:  if ((rt->last_object->effects.brightness =
+get_specs.c:  if ((rt->last_object->rotate.rx =
+get_specs.c:  if ((rt->last_object->rotate.ry =
+get_specs.c:  if ((rt->last_object->rotate.rz =
+get_specs.c:  if ((rt->last_object->coord.x =
+get_specs.c:  if ((rt->last_object->coord.y =
+get_specs.c:  if ((rt->last_object->coord.z =
+get_window_size.c:  rt->size.size_x = atoi(size_x);
+get_window_size.c:  rt->size.size_y = atoi(size_y);
+get_window_size.c:  if (rt->size.size_x <= 0 || rt->size.size_y <= 0)
+init_param.c:  if ((rt->mlx_init.mlx_ptr = mlx_init()) == NULL)
+init_param.c:  if ((rt->mlx_init.img_ptr =
+init_param.c:       mlx_new_image(rt->mlx_init.mlx_ptr,
+init_param.c:		     rt->size.size_x, rt->size.size_y)) == NULL)
+init_param.c:  if ((rt->mlx_init.win_ptr =
+init_param.c:       mlx_new_window(rt->mlx_init.mlx_ptr,
+init_param.c:		      rt->size.size_x, rt->size.size_y, WINDOW_NAME))
+init_param.c:  rt->mlx_init.data = mlx_get_data_addr(rt->mlx_init.img_ptr,
+init_param.c:					&rt->mlx_init.bits_per_pixel,
+init_param.c:					&rt->mlx_init.size_line,
+init_param.c:					&rt->mlx_init.endian);
+key_hook.c:      mlx_destroy_window(rt->mlx_init.mlx_ptr, rt->mlx_init.win_ptr);
+load_cos_and_sin.c:      rt->cosinus[count] = cos(RAD(count));
+load_cos_and_sin.c:      rt->sinus[count] = sin(RAD(count));
+loop_light.c:  rt->light_var.cos_a += cos_atmp;
+loop_light.c:  rt->light_var.color.red += ((light->color & 0xFF0000) >> 16);
+loop_light.c:  rt->light_var.color.green += ((light->color & 0x00FF00) >> 8);
+loop_light.c:  rt->light_var.color.blue += ((light->color & 0x0000FF));
+loop_light.c:  rt->light_var.brightness = object->effects.brightness;
+loop_light.c:  rt->light_var.vector.x = light->coord.x
+loop_light.c:    - (rt->k * rt->vector.x + eye->coord.x);
+loop_light.c:  rt->light_var.vector.y = light->coord.y
+loop_light.c:    - (rt->k * rt->vector.y + eye->coord.y);
+loop_light.c:  rt->light_var.vector.z = light->coord.z
+loop_light.c:    - (rt->k * rt->vector.z + eye->coord.z);
+loop_light.c:  rt->light_var.norme_l = sqrt(pow(rt->light_var.vector.x, 2)
+loop_light.c:			       + pow(rt->light_var.vector.y, 2)
+loop_light.c:			       + pow(rt->light_var.vector.z, 2));
+loop_light.c:  rt->matrice = 1;
+loop_light.c:  transp = create_transp_struct(object, &rt->vector, eye, rt->k);
+loop_light.c:  transp.prov_vector = &rt->prov_vector;
+loop_light.c:  transp.prov_eye = &rt->prov_eye;
+loop_light.c:    sphere_luminosity(rt, &transp, &rt->light_var.norm);
+loop_light.c:      cylinder_luminosity(rt, &transp, &rt->light_var.norm);
+loop_light.c:	plan_luminosity(rt, &transp, &rt->light_var.norm);
+loop_light.c:	  cone_luminosity(rt, &transp, &rt->light_var.norm);
+loop_light.c:  rt->light_var.norme_n = sqrt(pow(rt->light_var.norm.x, 2)
+loop_light.c:			       + pow(rt->light_var.norm.y, 2)
+loop_light.c:			       + pow(rt->light_var.norm.z, 2));
+loop_light.c:  rt->light_var.shadow += check_shadow(rt, light);
+loop_light.c:  cos_atmp = (rt->light_var.vector.x * rt->light_var.norm.x
+loop_light.c:	      + rt->light_var.vector.y * rt->light_var.norm.y
+loop_light.c:	      + rt->light_var.vector.z * rt->light_var.norm.z)
+loop_light.c:    / (rt->light_var.norme_n * rt->light_var.norme_l);
+loop_light.c:  rt->light_var.shadow = 0;
+loop_light.c:  rt->light_var.cos_a = 0;
+loop_light.c:  rt->light_var.color.red = 0;
+loop_light.c:  rt->light_var.color.blue = 0;
+loop_light.c:  rt->light_var.color.green = 0;
+loop_light.c:  light = rt->first_light;
+loop_light.c:  rt->light_var.shadow /= count;
+matrice_rotate.c:  return (rt->cosinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	  * rt->cosinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:	  - rt->sinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	  + rt->cosinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	  * rt->sinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:  return ((rt->cosinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	   * rt->sinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	   * rt->cosinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:	   + rt->sinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	   * rt->sinus[ANG(mat_val * object->rotate.ry)])
+matrice_rotate.c:	  + rt->cosinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	  * rt->cosinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	  + (rt->cosinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	     * rt->sinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	     * rt->sinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:	     - rt->sinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	     * rt->cosinus[ANG(mat_val * object->rotate.ry)])
+matrice_rotate.c:  return ((rt->sinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	   * rt->sinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	   * rt->cosinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:	   - rt->cosinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	   * rt->sinus[ANG(mat_val * object->rotate.ry)])
+matrice_rotate.c:	  + rt->sinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	  * rt->cosinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	  + (rt->sinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	     * rt->sinus[ANG(mat_val * object->rotate.rz)]
+matrice_rotate.c:	     * rt->sinus[ANG(mat_val * object->rotate.ry)]
+matrice_rotate.c:	     + rt->cosinus[ANG(mat_val * object->rotate.rx)]
+matrice_rotate.c:	     * rt->cosinus[ANG(mat_val * object->rotate.ry)])
+my_pixel_put.c:  if (x >= 0 && x <= rt->size.size_x && y >= 0 && y <= rt->size.size_y)
+my_pixel_put.c:      pos = x * 4 + y * rt->mlx_init.size_line;
+my_pixel_put.c:      rt->mlx_init.data[pos] = data[2];
+my_pixel_put.c:      rt->mlx_init.data[pos + 1] = data[1];
+my_pixel_put.c:      rt->mlx_init.data[pos + 2] = data[0];
+object_list_one.c:      if ((rt->last_object->color =
+object_list_one.c:      if ((rt->last_object->param =
+object_list_one.c:      if ((rt->last_object->color =
+object_list_one.c:      if ((rt->last_object->param =
+object_list_one.c:      if ((rt->last_object->color =
+object_list_one.c:      if ((rt->last_object->color =
+object_list_one.c:      if ((rt->last_object->param = get_specs(list, rt, ANGLE_NB))
+object_loop.c:    prov_k = inter_sphere(rt, object, &(rt->prov_eye), &(rt->prov_vector));
+object_loop.c:    prov_k = inter_cylinder(rt, object, &(rt->prov_eye), &(rt->prov_vector));
+object_loop.c:    prov_k = inter_plan(rt, object, &(rt->prov_eye), &(rt->prov_vector));
+object_loop.c:    prov_k = inter_cone(rt, object, &(rt->prov_eye), &(rt->prov_vector));
+object_loop.c:  if (prov_k > 0 && (rt->inter == FALSE || prov_k < rt->k))
+object_loop.c:      rt->k = prov_k;
+object_loop.c:      rt->color = object->color;
+object_loop.c:      rt->inter = TRUE;
+object_loop.c:      rt->final_obj = object;
+object_loop.c:      if (rt->first_light != NULL)
+object_loop.c:	loop_light(rt, rt->final_obj, &rt->eye);
+object_loop.c:  object = rt->first_object;
+object_loop.c:  rt->inter = FALSE;
+object_loop.c:  if (rt->inter == FALSE)
+object_loop.c:      if (rt->inter == TRUE && (rt->first_light == NULL ||
+object_loop.c:				(rt->first_light != NULL &&
+object_loop.c:				 rt->light_var.cos_a <= 0.000001)))
+object_loop.c:	if (rt->inter == TRUE && rt->light_var.cos_a > 0.000001 &&
+object_loop.c:	    rt->first_light != NULL)
+pars_first_line.c:  rt->first_object = NULL;
+pars_first_line.c:  rt->ref_tab = &(ref_tab[0]);
+thread_create.c:  repart = rt->size.size_x * rt->size.size_y / rt->general_param.threads;
+thread_create.c:  rt->pix_calc.nb_pixel = repart;
+thread_create.c:  rt->pix_calc.pixel_pos = 0;
+thread_create.c:  while (count != rt->general_param.threads)
+thread_create.c:      rt->pix_calc.nb_pixel += repart;
+thread_create.c:      rt->pix_calc.pixel_pos += repart;
+thread_create.c:  while (count != rt->general_param.threads)
+transparency.c:  object = rt->first_object;
+transparency.c:	      rt->color = object->color;
+transparency.c:	      rt->inter = TRUE;
+transparency.c:	      if (rt->first_light != NULL)
+transparency.c:  if (inter == FALSE || (rt->first_light == NULL
+transparency.c:			     ||(rt->first_light != NULL
+transparency.c:				&& rt->light_var.cos_a <= 0.000001)))
+transparency.c:	color_tmp[0] = (int)((rt->color & 0xFF0000) >> 16)
+transparency.c:	    * rt->light_var.cos_a * rt->light_var.shadow
+transparency.c:	  + (rt->light_var.brightness * rt->light_var.cos_a
+transparency.c:	     * rt->light_var.color.red / 100) * rt->light_var.shadow;
+transparency.c:	color_tmp[1] = (int)((rt->color & 0x00FF00) >> 8)
+transparency.c:	    * rt->light_var.cos_a * rt->light_var.shadow
+transparency.c:	  + (rt->light_var.brightness * rt->light_var.cos_a
+transparency.c:	     * rt->light_var.color.green / 100) * rt->light_var.shadow;
+transparency.c:	color_tmp[2] = (int)(rt->color & 0x0000FF)
+transparency.c:	    * rt->light_var.cos_a * rt->light_var.shadow
+transparency.c:	  + (rt->light_var.brightness * rt->light_var.cos_a
+transparency.c:	     * rt->light_var.color.blue / 100) * rt->light_var.shadow;
